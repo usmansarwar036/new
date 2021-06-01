@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitive</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* body {
+            
+            height: 5000px;
+            position: relative;
+        }
+
+        body::before {
+            position: absolute;
+            content: " ";
+            background: url('https://source.unsplash.com/collection/19027/1600x900') no-repeat center center/cover;
+            height: 100%;
+            width: 100%;
+            opacity: 0.2;
+            z-index: -9;
+        } */
+
+
+
+
+
+
+
+
+
+        /* navbar */
+
+        .navbar {
+            z-index: 3;
+            /* border: 2px solid black; */
+            /* background-color: rgb(200, 255, 0); */
+            position: sticky;
+            top: 0.1px;
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+        }
+
+        #navRight {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #dn {
+            display: flex;
+
+        }
+
+        #u1 {
+            background-color: #5fd25f;
+            color: white;
+            display: inline-block;
+            width: 185px;
+            height: 38px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+
+        #dn div {
+            border-radius: 5px;
+            width: 55px;
+            height: 30px;
+            /* color: blue; */
+            text-align: center;
+            border: 2px solid rgb(224, 230, 228);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2px;
+        }
+
+        #dn div:hover {
+            border-color: #5fd25f;
+            color: #5fd25f;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+
+        }
+
+        #u1:hover {
+            background-color: green;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+
+        }
+
+        /* ------------------------------------- */
+
+
+        /* Top Pic */
+        #top-pic {
+            position: relative;
+            height: 500px;
+            /* border: 2px solid red; */
+        }
+
+        #top-pic::before {
+            content: "";
+            background: url('https://source.unsplash.com/collection/196427/1600x900') no-repeat center center/cover;
+            background-color: wheat;
+            opacity: 0.3;
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #trans {
+            opacity: 0.7;
+            font-family: monospace;
+            margin: 17px 0px 0 17px;
+            display: inline-block;
+        }
+
+        #man {
+            color: rgb(95 94 92);
+            font-family: cursive;
+            font-size: 18px;
+            margin: 20px 0px;
+            ;
+            display: inline-block;
+        }
+
+        /* ------------------------------------- */
+
+        /* 1st-para */
+        #first-para {
+            background-color: rgb(238, 237, 237);
+            /* border: 2px solid red; */
+            padding: 80px;
+
+        }
+
+        #first-para div {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #first-para p {
+            text-align: center;
+            margin: 10px 30px;
+        }
+
+        #first-para img {
+            width: 100%;
+            height: 400px;
+        }
+
+        #first-para h3 {
+            font-size: 2rem;
+            font-family: cursive;
+            margin: 20px 0 0px 0;
+        }
+
+        /* ----------------------------------- */
+
+
+        /* detail */
+        #detail {
+            display: flex;
+            background-color: rgba(2, 2, 2, 0.9);
+            /* opacity: 0.7; */
+            padding: 80px;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        #detail div {
+            padding: 30px;
+            width: 250px;
+            border-left: 1px solid rgb(148, 144, 144);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        #detail div:nth-child(1) {
+            border: none;
+        }
+
+        #detail div p {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            color: white;
+            font-size: 22px;
+            padding: 10px 20px;
+            border: 2px solid rgb(173, 171, 171);
+            margin: 20px 0 0 0;
+            border-radius: 7px;
+        }
+
+        .btn:hover {
+            background-color: rgba(41, 39, 39, 1);
+            cursor: pointer;
+            /* border: 2px solid rgb(255, 252, 252); */
+            transition: 0.4s ease-in-out;
+        }
+
+        /* ------------------------------------ */
+
+
+        /* about-us */
+        #about-us {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: gainsboro;
+        }
+
+        #about-us div {
+            width: 310px;
+            display: flex;
+            flex-direction: column;
+            background-color: ghostwhite;
+            padding: 60px;
+            padding-top: 150px;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        #about-us div p {
+            text-align: center;
+        }
+
+
+        @media (max-width: 1200px) {
+            #about-us div {
+                padding: 60px;
+                /* color: cyan; */
+                width: auto;
+                margin: 20px;
+            }
+
+            #detail {
+
+                flex-wrap: wrap;
+
+
+            }
+
+            #detail div:nth-child(3) {
+                border: none;
+                border-top: 1px solid rgb(148, 144, 144);
+
+            }
+
+            #detail div:nth-child(2) {
+                border: none;
+                border-top: 1px solid rgb(148, 144, 144);
+
+            }
+
+            #detail div {
+                width: auto;
+            }
+
+            #new input,
+            #new1 input {
+                border: 1px solid #767676;
+                width: 300px
+            }
+        }
+
+        /* ------------------------------ */
+
+        /* Form */
+        #form {
+            background-color: #c7c6c6;
+            padding: 50px;
+        }
+
+        #form h3 {
+            text-align: center;
+            font-size: 2rem;
+            font-family: cursive;
+            margin: 20px;
+        }
+
+        hr {
+            margin: 0 50px;
+        }
+
+        form {
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        form div {
+            margin: 20px;
+        }
+
+        #new input,
+        #new1 input {
+            border: 1px solid #767676;
+            width: 40vw;
+        }
+
+        #new3 textarea {
+            width: 85vw;
+        }
+
+        #new2 select {
+            width: 86.5vw;
+        }
+
+        form input,
+        textarea,
+        select {
+            border-radius: 7px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin-top: 8px;
+        }
+
+        #btnl {
+            display: block;
+            width: 100px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1rem;
+            padding: 10px 25px;
+            border: 1px solid rgb(144, 141, 141);
+            color: cornsilk;
+            background-color: rgb(48, 48, 194);
+            border-radius: 7px;
+        }
+
+        #btnl:hover {
+            background-color: rgb(0, 0, 255);
+            cursor: pointer;
+        }
+
+        /* ------------------------------------- */
+
+
+        /* Footer */
+        footer {
+            background-color: #f1f1f1;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer p {
+            /* display: inline-block; */
+            margin: auto;
+
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar">
+        <div id="navleft">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis possimus accusamus dolorem.</p>
+        </div>
+        <div id="navRight">
+            <span id="u1">downlaod (76.3 kb)</span>
+            <div id="dn">
+                <div id="d1">h</div>
+                <div id="d2">l</div>
+                <div id="d3">r</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- --------------------------------------- -->
+
+    <!-- Top Pic -->
+    <section id="top-pic">
+        <p id="trans">Tarnsitive by</p>
+        <p id="man"> Usman</p>
+    </section>
+    <!-- ------------------------------------ -->
+
+
+    <!-- first-para -->
+    <section id="first-para">
+        <img src="https://source.unsplash.com/collection/19027/1600x900" alt="">
+        <div>
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae repellendus quia numquam porro, quibusdam
+                itaque nulla dicta mollitia atque, veniam obcaecati nihil fugit quam dolorem voluptatibus accusantium
+                officia cupiditate reiciendis . Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, numquam.
+                Ipsa maiores suscipit quis quod non rerum vitae fugiat iusto, nihil nesciunt. Architecto dolorum
+                repellat tempora, nisi repellendus fuga saepe.
+            </p>
+        </div>
+
+    </section>
+    <!-- ---------------------------------- -->
+
+    <!-- detail -->
+    <section id="detail">
+        <div>
+            <p class="detail-para">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam consequuntur eum fugiat. Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Officiis aut neque iste?
+            </p>
+            <span class="btn">Learn More</span>
+        </div>
+        <div>
+            <p class="detail-para">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam consequuntur eum fugiat. Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Officiis aut neque iste?
+            </p>
+            <span class="btn">Learn More</span>
+        </div>
+        <div>
+            <p class="detail-para">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam consequuntur eum fugiat. Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Officiis aut neque iste?
+            </p>
+            <span class="btn">Learn More</span>
+        </div>
+    </section>
+
+    <!-- ------------------------------------------------- -->
+
+
+    <!-- about-us -->
+    <section id="about-us">
+        <div>
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae repellendus quia numquam porro, quibusdam
+                itaque nulla dicta mollitia atque, veniam obcaecati nihil fugit quam dolorem voluptatibus accusantium
+                officia cupiditate reiciendis . Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, numquam.
+                Ipsa maiores suscipit quis quod non rerum vitae fugiat iusto, nihil nesciunt. Architecto dolorum
+                repellat tempora, nisi repellendus fuga saepe.
+            </p>
+        </div>
+        <div>
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae repellendus quia numquam porro, quibusdam
+                itaque nulla dicta mollitia atque, veniam obcaecati nihil fugit quam dolorem voluptatibus accusantium
+                officia cupiditate reiciendis . Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, numquam.
+                Ipsa maiores suscipit quis quod non rerum vitae fugiat iusto, nihil nesciunt. Architecto dolorum
+                repellat tempora, nisi repellendus fuga saepe.
+            </p>
+        </div>
+    </section>
+    <!-- -------------------------------- -->
+
+
+    <!-- form -->
+    <section id="form">
+        <h3>Get In Touch</h3>
+        <hr>
+        <div>
+            <form action="">
+                <div id="new">
+                    <label for="name">Name: </label><br>
+                    <input type="text" id="name" placeholder=" Enter Your Name">
+                </div>
+                <div id="new1">
+                    <label for="email">Email: </label><br>
+                    <input type="email" id="email" placeholder=" Enter Your Email">
+                </div>
+
+                <div id="new2">
+                    <label for="department">Department:</label><br>
+                    <select id="department" placeholder=" -catagary- ">
+                        <option value="">-catagary- </option>
+                        <option value="1">Computer Science</option>
+                        <option value="2">IT Department</option>
+                        <option value="3">Software Engineering</option>
+                        <option value="4">Cyber Security</option>
+                    </select>
+                </div>
+
+                <div id="new3">
+                    <label for="messege">Messege: </label><br>
+                    <textarea id="messege" cols="30" rows="10" placeholder="Messege"></textarea>
+                </div>
+            </form>
+            <p id="btnl">Send Messege</p>
+        </div>
+    </section>
+
+    <!-- ------------------------------------- -->
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Unique Design by: <u>USMAN</u> </p>
+    </footer>
+
+</body>
+
+</html>
